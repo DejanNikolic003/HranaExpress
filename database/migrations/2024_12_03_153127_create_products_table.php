@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->timestamps();
 
-            $table->foreign('restaurant_id')->references('id')->on('restaurant')->onDelete('cascade');
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
         });
     }
 
