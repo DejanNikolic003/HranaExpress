@@ -15,6 +15,8 @@ class Cart extends Component
     public $productId;
     public $quantity = 1;
 
+    protected $listeners = ['removeFromCart', 'removeFromCart'];
+
     public function mount(int $productId)
     {
        $this->productId = $productId;
@@ -28,11 +30,11 @@ class Cart extends Component
         if(!$product) {
             $this->toast()->error('Proizvod ne postoji!')->send(); 
         }
-
         
         if(!isset($this->cart[$product->id])) 
         {
             $this->cart[$product->id] = [
+                'productId' => $product->id,
                 'name' => $product->name,
                 'price' => $product->total_price,
                 'quantity' => $this->quantity,
@@ -43,6 +45,18 @@ class Cart extends Component
         Session::put('cart', $this->cart);
         $this->dispatch('updateCart');
         $this->toast()->success('Uspešno ste dodali proizvod u korpu!')->send();
+    }
+
+    public function removeFromCart(int $productId)
+    {
+        if(!isset($this->cart[$productId])) {
+            $this->toast()->error('Proizvod ne postoji!')->send(); 
+        }
+        
+        unset($this->cart[$productId]);
+        Session::put('cart', $this->cart);
+        $this->dispatch('updateCart');
+
     }
 
     public function render()

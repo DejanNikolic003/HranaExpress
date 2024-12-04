@@ -2,7 +2,7 @@
     <x-primary-button
     x-data=""
     x-on:click.prevent="$dispatch('open-modal', 'open-cart')">
-        {{ __('Korpa') }} ({{ $itemCount }})
+        {{ __('Korpa') }} @if($itemCount > 0) ({{ $itemCount }}) @endif
     </x-primary-button>
     <x-amodal name="open-cart" focusable title='Korpa'>
         @if(count($cart) > 0)
@@ -16,8 +16,11 @@
                             <p>{{ $items['name'] }}</p>
                             <p class="text-xs text-gray-400 text-left">Količina: {{ $items['quantity'] }}</p>
                         </div>
-                        <div>
+                        <div class="flex flex-col items-end">
                             <p class="font-medium">{{ ($items['price'] * $items['quantity']) }} <span class="text-primary text-base">RSD</span></p>
+                            <x-secondary-button class="p-1" wire:click="removeItem({{ $items['productId']}})">
+                                X
+                            </x-secondary-button>
                         </div>
                     </div>
                 </div>
@@ -25,6 +28,10 @@
                     <div class="w-full h-[0.2px] border border-dashed"></div>
                 @endif
             @endforeach
+        @else 
+            <div class="p-3 flex-col w-full justify-center items-center">
+                <p class="text-gray-400 text-lg text-center font-medium">Vaša korpa je prazna.</p>
+            </div>
         @endif
         <hr class="my-2 h-0.5 border-t-0 bg-gray-100 mt-2" />
         <div class="flex items-center justify-end gap-2">

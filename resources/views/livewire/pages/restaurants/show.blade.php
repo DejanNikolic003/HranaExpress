@@ -76,24 +76,24 @@
                           <div class="h-34 md:h-44 overflow-hidden">
                             <img src="https://imageproxy.wolt.com/venue/6244602e8b1d8a7188362d50/e7dbcf1c-ea45-11ec-851b-127341d19a33_menu__3___9_.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="Restaurant Image" />
                           </div>
-                          <div class="flex justify-between gap-2 p-4">
-                            <div class="flex flex-col gap-2">
-                              <h3 class="text-balance text-base font-bold text-neutral-900" aria-describedby="restaurantDesc">
-                                {{ $product->name }}
-                              </h3>
-                              <p id="restaurantDesc" class="text-pretty text-sm">
-                                {{ \Illuminate\Support\Str::limit($product->description, 400, '...') }}
-                              </p>
+                            <div class="flex justify-between gap-2 p-4">
+                                <div class="flex flex-col gap-2">
+                                <h3 class="text-balance text-base font-bold text-neutral-900" aria-describedby="restaurantDesc">
+                                    {{ $product->name }}
+                                </h3>
+                                <p id="restaurantDesc" class="text-pretty text-sm">
+                                    {{ \Illuminate\Support\Str::limit($product->description, 400, '...') }}
+                                </p>
+                                </div>
                             </div>
-                          </div>
-                          <div class="w-full h-[0.2px] border border-dashed"></div>
-                          <div class="flex flex-col gap-4 p-4">
-                            <div class="flex items-center justify-between text-sm gap-2">
-                              <p>{{ $product->total_price }} <span class="text-base text-primary font-bold">RSD</span></p>
-                             
-                              @livewire('cart', ['productId' => $product->id])
+                            <div class="w-full h-[0.2px] border border-dashed"></div>
+                            <div class="flex flex-col gap-4 p-4">
+                                <div class="flex items-center justify-between text-sm gap-2">
+                                <p>{{ $product->total_price }} <span class="text-base text-primary font-bold">RSD</span></p>
+                                
+                                @livewire('cart', ['productId' => $product->id])
+                                </div>
                             </div>
-                          </div>
                         </article>
                       </a>
                       @endforeach
