@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\OrderStatus;
-use App\DeliveryStatus;
+use App\Http\Enums\OrderStatus;
+use App\Http\Enums\DeliveryStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

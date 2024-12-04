@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Http\Enums\PermissionEnum;
+use App\Http\Enums\RoleEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,7 +18,7 @@ class User extends Authenticatable
         'last_name',
         'street_number',
         'phone_number',
-        'permission',
+        'role',
         'password',
     ];
 
@@ -31,7 +31,7 @@ class User extends Authenticatable
     {
         return [
             'password' => 'hashed',
-            'permission' => PermissionEnum::class,        
+            'role' => RoleEnum::class,        
         ];
     }
 }

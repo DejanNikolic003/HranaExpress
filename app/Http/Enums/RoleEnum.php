@@ -2,7 +2,7 @@
 
 namespace App\Http\Enums;
 
-enum PermissionEnum: int 
+enum RoleEnum: int 
 {
    case USER = 0;
    case COURIER = 1;
