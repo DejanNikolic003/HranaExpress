@@ -5,11 +5,11 @@
         </h2>
     </x-slot>
 
-    <div class="py-6">
+    <div class="py-2">
         <div class="max-w-7xl mx-auto">
             <div class="overflow-hidden sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    @livewire('pages.restaurant')
+                    @livewire('pages.restaurants.index')
                 </div>
             </div>
         </div>
