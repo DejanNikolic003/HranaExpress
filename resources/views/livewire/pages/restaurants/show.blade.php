@@ -89,11 +89,9 @@
                           <div class="w-full h-[0.2px] border border-dashed"></div>
                           <div class="flex flex-col gap-4 p-4">
                             <div class="flex items-center justify-between text-sm gap-2">
-                              <p>{{ $product->total_price }} RSD</p>
+                              <p>{{ $product->total_price }} <span class="text-base text-primary font-bold">RSD</span></p>
                              
-                              <x-primary-button>
-                                {{ __('Dodaj u korpu') }}
-                              </x-primary-button>
+                              @livewire('cart', ['productId' => $product->id])
                             </div>
                           </div>
                         </article>
@@ -101,7 +99,6 @@
                       @endforeach
                     </div>
                 </div>
-                  
             </div>
         </div>
     </div>
