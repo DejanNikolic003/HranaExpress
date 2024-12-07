@@ -11,16 +11,13 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('courier_id')->default(0);
+            $table->unsignedBigInteger('courier_id')->nullable();
             $table->string('status')->default(0);
             $table->decimal('total_price', 10, 2);
-            $table->decimal('delivery_fee', 10, 2)->nullable();
-            $table->string('payment_method')->default('cash');
             $table->string('delivery_address');
             $table->timestamp('delivery_time')->nullable();
-            $table->string('delivery_status')->default('pending');
-            $table->text('order_notes')->nullable();
-
+            $table->string('delivery_status')->default(0);
+        
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('courier_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

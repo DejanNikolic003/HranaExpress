@@ -45,26 +45,26 @@ new #[Layout('layouts.guest')] class extends Component
     <form wire:submit="register" class="space-y-3">
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email" name="email" required />
+            <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email" name="email" required autofocus />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="username" :value="__('Korisničko Ime')" />
-            <x-text-input wire:model="username" id="username" class="block mt-1 w-full" type="text" name="username" required autofocus />
+            <x-text-input wire:model="username" id="username" class="block mt-1 w-full" type="text" name="username" required />
             <x-input-error :messages="$errors->get('username')" class="mt-2" />
         </div>
 
         <div class="flex items-center space-x-1">
             <div class="w-full">
                 <x-input-label for="first_name" :value="__('Ime')" />
-                <x-text-input wire:model="first_name" id="first_name" class="block mt-1 w-full" type="text" name="first_name" required autofocus />
+                <x-text-input wire:model="first_name" id="first_name" class="block mt-1 w-full" type="text" name="first_name" required  />
                 <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
             </div>
 
             <div class="w-full">
                 <x-input-label for="last_name" :value="__('Prezime')" />
-                <x-text-input wire:model="last_name" id="last_name" class="block mt-1 w-full" type="text" name="last_name" required autofocus/>
+                <x-text-input wire:model="last_name" id="last_name" class="block mt-1 w-full" type="text" name="last_name" required />
                 <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
             </div>
         </div>
@@ -72,12 +72,12 @@ new #[Layout('layouts.guest')] class extends Component
         <div class="flex items-center space-x-1">
             <div class="w-full">
                 <x-input-label for="street_number" :value="__('Ulica i broj')" />
-                <x-text-input wire:model="street_number" id="street_number" class="block mt-1 w-full" type="text" name="street_number" required autofocus />
+                <x-text-input wire:model="street_number" id="street_number" class="block mt-1 w-full" type="text" name="street_number" required  />
             </div>
 
             <div class="w-full">
                 <x-input-label for="phone_number" :value="__('Broj telefona')" />
-                <x-text-input wire:model="phone_number" id="phone_number" class="block mt-1 w-full" type="text" name="phone_number" required autofocus/>
+                <x-text-input wire:model="phone_number" id="phone_number" class="block mt-1 w-full" type="text" name="phone_number" required />
             </div>
         </div>
 

@@ -41,7 +41,6 @@ class Order extends Model
     protected function casts(): array
     {
         return [
-            'status' => OrderStatus::class,
             'delivery_status' => DeliveryStatus::class,        
         ];
     }

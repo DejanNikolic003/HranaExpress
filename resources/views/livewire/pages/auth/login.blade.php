@@ -37,7 +37,6 @@ new #[Layout('layouts.guest')] class extends Component
 
         <div>
             <x-input-label for="password" :value="__('Lozinka')" />
-
             <x-text-input wire:model="form.password" id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"

@@ -2,9 +2,9 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
       @foreach($restaurants as $restaurant)
       <a href="{{ route('restaurant.show', $restaurant->id)}}">
-        <article class="group flex rounded-md flex-col overflow-hidden border border-neutral-300 bg-neutral-50 text-neutral-600 transition duration-700 ease-out group-hover:scale-105">
+        <article class="min-h-[10rem] group flex rounded-md flex-col justify-between  overflow-hidden border border-neutral-300 bg-neutral-50 text-neutral-600 transition duration-700 ease-out hover:scale-105">
           <div class="h-34 md:h-44 overflow-hidden">
-            <img src="https://imageproxy.wolt.com/venue/6244602e8b1d8a7188362d50/e7dbcf1c-ea45-11ec-851b-127341d19a33_menu__3___9_.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="Restaurant Image" />
+            <img src="https://imageproxy.wolt.com/venue/6244602e8b1d8a7188362d50/e7dbcf1c-ea45-11ec-851b-127341d19a33_menu__3___9_.jpg" class="object-cover transition duration-700 ease-out" alt="Restaurant Image" />
           </div>
           <div class="flex justify-between gap-2 p-4">
             <div class="flex flex-col gap-2">

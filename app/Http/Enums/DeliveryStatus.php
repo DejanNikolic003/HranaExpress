@@ -12,10 +12,10 @@ enum DeliveryStatus: int
     public function label(): string
     {
         return match($this) {
-            self::PENDING => 'Na čekanju',
+            self::PENDING => 'Na putu',
             self::PROCESSING => 'U obradi',
-            self::COMPLETED => 'Završeno',
-            self::CANCELED => 'Otkazano',
+            self::COMPLETED => 'Dostavljeno',
+            self::CANCELED => 'Odbijena narudžbina',
         };
     }
 }
